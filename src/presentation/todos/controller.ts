@@ -1,9 +1,9 @@
 import { Request, Response } from "express"
 
 const todos = [
-    { id: 1, text: 'Buy milk', completedAt: new Date() },
-    { id: 2, text: 'Buy bread', completedAt: null },
-    { id: 3, text: 'Buy butter', completedAt: new Date() },
+    { id: 1, text: 'Buy milk', completedAt: new Date(), url: 'http://localhost:3000/images/tarta-de-chocolate.jpg' },
+    { id: 2, text: 'Buy bread', completedAt: null, url: '' },
+    { id: 3, text: 'Buy butter', completedAt: new Date(), url: '' },
 ];
 
 export class TodosController {
@@ -35,7 +35,8 @@ export class TodosController {
         const newTodo = {
             id: todos.length + 1,
             text: text,
-            completedAt: null
+            completedAt: null,
+            url: ''
         }
 
         todos.push(newTodo);

@@ -29,9 +29,13 @@ export class Server {
         this.app.use(express.json()); // raw
         this.app.use(express.urlencoded({extended: true})); // w-www-form-urlencoded
 
-
+        
+        
         //--- Public folder
         this.app.use(express.static(this.publicPath));
+        
+        // ---- Images
+        this.app.use('/images', express.static(path.join(__dirname, 'images')));
 
         //--- Routes
         this.app.use(this.routes);

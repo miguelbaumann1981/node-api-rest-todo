@@ -30,6 +30,8 @@ class Server {
             this.app.use(express_1.default.urlencoded({ extended: true })); // w-www-form-urlencoded
             //--- Public folder
             this.app.use(express_1.default.static(this.publicPath));
+            // ---- Images
+            this.app.use('/images', express_1.default.static(path_1.default.join(__dirname, 'images')));
             //--- Routes
             this.app.use(this.routes);
             // --- SPA

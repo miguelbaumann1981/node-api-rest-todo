@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "text": "Buy milk",
+      "completedAt": "2023-10-12",
+      "url": "http://localhost:3000/images/tarta-de-chocolate.jpg"
+    },
+    { 
+      "id": 2, 
+      "text": "Buy bread", 
+      "completedAt": "2023-10-12", 
+      "url": "" 
+    },
+    { 
+      "id": 3, 
+      "text": "Buy butter", 
+      "completedAt": "2023-10-12", 
+      "url": "" 
+    }
+  ]
+}

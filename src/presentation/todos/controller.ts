@@ -1,10 +1,14 @@
-import { Request, Response } from "express"
+import { Request, Response } from "express";
+import data from '../../../public/data/items.json';
 
-const todos = [
-    { id: 1, text: 'Buy milk', completedAt: new Date(), url: 'http://localhost:3000/images/tarta-de-chocolate.jpg' },
-    { id: 2, text: 'Buy bread', completedAt: null, url: '' },
-    { id: 3, text: 'Buy butter', completedAt: new Date(), url: '' },
-];
+// const todos = [
+//     { id: 1, text: 'Buy milk', completedAt: new Date(), url: 'http://localhost:3000/images/tarta-de-chocolate.jpg' },
+//     { id: 2, text: 'Buy bread', completedAt: null, url: '' },
+//     { id: 3, text: 'Buy butter', completedAt: new Date(), url: '' },
+// ];
+
+const todos = data.items;
+console.log(todos);
 
 export class TodosController {
 
@@ -35,7 +39,7 @@ export class TodosController {
         const newTodo = {
             id: todos.length + 1,
             text: text,
-            completedAt: null,
+            completedAt: '',
             url: ''
         }
 
@@ -56,9 +60,9 @@ export class TodosController {
         // if (!text) return res.status(400).json({error: 'Text property is mandatory'});
 
         todo.text = text || todo.text;
-        (completedAt == 'null')
-            ? todo.completedAt = null
-            : todo.completedAt = new Date(completedAt || todo.completedAt)
+        (completedAt === 'null')
+            ? todo.completedAt = ''
+            : todo.completedAt = '2023-10-12'
         
         res.json(todo);
     }
